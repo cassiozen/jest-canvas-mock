@@ -464,7 +464,7 @@ export default class CanvasRenderingContext2D {
             this.constructor.name +
             "': parameter 1 is not of type 'ImageData'."
         );
-      let result = new ImageData(width.width, width.height);
+      let result = new window.ImageData(width.width, width.height);
       result.data.set(width.data);
       const event = createCanvasEvent(
         'createImageData',
@@ -494,7 +494,7 @@ export default class CanvasRenderingContext2D {
         { width, height }
       );
       this._events.push(event);
-      return new ImageData(width, height);
+      return new window.ImageData(width, height);
     }
   }
 
@@ -527,7 +527,7 @@ export default class CanvasRenderingContext2D {
 
     this._events.push(event);
 
-    return new CanvasGradient();
+    return new window.CanvasGradient();
   }
 
   createPattern(image, type) {
@@ -643,7 +643,7 @@ export default class CanvasRenderingContext2D {
       }
     );
     this._events.push(event);
-    return new CanvasGradient();
+    return new window.CanvasGradient();
   }
 
   set currentTransform(value) {
@@ -1055,7 +1055,7 @@ export default class CanvasRenderingContext2D {
   }
 
   getImageData() {
-    return new ImageData(this._canvas.width, this._canvas.height);
+    return new window.ImageData(this._canvas.width, this._canvas.height);
   }
 
   getLineDash() {

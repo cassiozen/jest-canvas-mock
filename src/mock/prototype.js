@@ -21,7 +21,7 @@ export default function mockPrototype() {
        * getContext() is called on the same canvas object multiple times.
        */
       if (generatedContexts.has(this)) return generatedContexts.get(this);
-      const ctx = new CanvasRenderingContext2D(this);
+      const ctx = new window.CanvasRenderingContext2D(this);
       generatedContexts.set(this, ctx);
       return ctx;
     }
