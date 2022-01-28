@@ -1,3 +1,4 @@
+import { vi } from 'vitest';
 import DOMMatrix from './DOMMatrix';
 import CanvasPattern from './CanvasPattern';
 import cssfontparser from 'cssfontparser';
@@ -178,7 +179,7 @@ export default class CanvasRenderingContext2D {
 
   constructor(canvas) {
     testFuncs.forEach((key) => {
-      this[key] = jest.fn(CanvasRenderingContext2D.prototype[key].bind(this));
+      this[key] = vi.fn(CanvasRenderingContext2D.prototype[key].bind(this));
     });
     this._canvas = canvas;
   }

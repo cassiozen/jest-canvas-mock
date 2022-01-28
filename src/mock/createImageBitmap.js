@@ -1,6 +1,7 @@
+import { vi } from 'vitest';
 import ImageBitmap from '../classes/ImageBitmap';
 
-export default jest.fn(function createImageBitmap(
+export default vi.fn(function createImageBitmap(
   img,
   sx,
   sy,
