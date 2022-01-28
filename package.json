@@ -2,11 +2,12 @@
   "name": "vitest-canvas-mock",
   "version": "2.3.1",
   "description": "Mock a canvas in your vitest tests.",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "types": "types/index.d.ts",
+  "type": "module",
   "scripts": {
     "test": "jest --no-cache",
-    "build": "babel src --out-dir lib",
+    "build": "rollup src/index.js -d dist --format esm --preserveModules",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "prepare": "npm run build",
     "prettier": "prettier --write ."
@@ -28,7 +29,9 @@
     "coveralls": "^3.0.11",
     "husky": "^4.2.5",
     "jest": "^25.3.0",
-    "prettier": "^2.0.4"
+    "prettier": "^2.0.4",
+    "rollup": "^2.66.1",
+    "rollup-plugin-babel": "^4.4.0"
   },
   "commitlint": {
     "extends": [
